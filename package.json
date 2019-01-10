@@ -13,12 +13,15 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/dot-event/arg#readme",
-  "main": "dot.js",
+  "main": "arg.js",
   "scripts": {
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore --ext=js .",
     "pretty": "prettier --write **/*.css **/*.json **/*.md",
     "test": "jest"
+  },
+  "dependencies": {
+    "getopts": "2.2.3"
   },
   "devDependencies": {
     "@dot-event/store": "next",
@@ -124,8 +127,5 @@
       "<rootDir>/**/*Test.js"
     ],
     "testEnvironment": "node"
-  },
-  "dependencies": {
-    "getopts": "^2.2.3"
   }
 }
