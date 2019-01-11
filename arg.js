@@ -17,18 +17,17 @@ module.exports = function arg(dot, opts) {
   return dot
 }
 
-function parseArgs(o) {
-  var dot = o.dot,
-    opt = o.opt,
-    prop = o.prop
+function parseArgs(arg, opts) {
+  var dot = opts.dot,
+    prop = opts.prop
 
   var alias, args
 
-  if (opt && opt.args) {
-    args = opt.args
-    alias = opt.alias
+  if (arg && arg.args) {
+    args = arg.args
+    alias = arg.alias
   } else {
-    args = opt
+    args = arg
   }
 
   if (typeof args === "string") {
@@ -37,9 +36,7 @@ function parseArgs(o) {
     args = processArgs() || urlArgs()
   }
 
-  var opts = getopts(args, { alias: alias })
-
-  return dot.set(prop, opts)
+  return dot.set(prop, getopts(args, { alias: alias }))
 }
 
 function processArgs() {
