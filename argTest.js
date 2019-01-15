@@ -27,7 +27,7 @@ test("arg from array", function() {
 test("arg from process", function() {
   expect.assertions(1)
 
-  return dot.arg("test").then(function() {
+  return dot.arg("test", {}).then(function() {
     expect(dot.get("test")).toEqual({ _: [] })
   })
 })
