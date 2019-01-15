@@ -4,23 +4,17 @@
 var getopts = require("getopts")
 
 module.exports = function arg(dot, opts) {
-  opts = opts || {}
-
   if (dot.state.arg) {
-    return dot
+    return
   }
 
+  opts = opts || {}
   dot.state.arg = opts
 
   dot.any("arg", parseArgs)
-
-  return dot
 }
 
-function parseArgs(arg, opts) {
-  var dot = opts.dot,
-    prop = opts.prop
-
+function parseArgs(prop, arg, dot) {
   var alias, args
 
   if (arg && arg.args) {
