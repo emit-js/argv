@@ -17,11 +17,9 @@ module.exports = function arg(dot, opts) {
 function parseArgs(prop, arg, dot) {
   var alias, args
 
-  if (arg && arg.args) {
+  if (arg) {
     args = arg.args
     alias = arg.alias
-  } else {
-    args = arg
   }
 
   if (typeof args === "string") {

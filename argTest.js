@@ -13,21 +13,21 @@ beforeEach(function() {
 test("arg from array", function() {
   expect.assertions(1)
 
-  return dot("arg.test", ["a", "-b", "--c=d"]).then(
-    function() {
-      expect(dot.get("test")).toEqual({
-        _: ["a"],
-        b: true,
-        c: "d",
-      })
-    }
-  )
+  return dot("arg", "test", {
+    args: ["a", "-b", "--c=d"],
+  }).then(function() {
+    expect(dot.get("test")).toEqual({
+      _: ["a"],
+      b: true,
+      c: "d",
+    })
+  })
 })
 
 test("arg from process", function() {
   expect.assertions(1)
 
-  return dot.arg("test", {}).then(function() {
+  return dot.arg("test").then(function() {
     expect(dot.get("test")).toEqual({ _: [] })
   })
 })
@@ -35,7 +35,7 @@ test("arg from process", function() {
 test("arg from url", function() {
   expect.assertions(1)
 
-  var promise = dot("arg.test", {
+  var promise = dot("arg", "test", {
     args: "http://host?x=1&y=1",
   }).then(function() {
     expect(dot.get("test")).toEqual({ _: [], x: 1, y: 1 })
@@ -49,7 +49,7 @@ test("arg from url", function() {
 test("arg with alias", function() {
   expect.assertions(1)
 
-  return dot("arg.test", {
+  return dot("arg", "test", {
     alias: { hi: "hello" },
     args: ["--hi"],
   }).then(function() {
