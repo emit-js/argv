@@ -49,7 +49,7 @@ function urlArgs(url) {
     .forEach(function(p) {
       p = p.split("=")
       args.push("--" + p[0])
-      args.push([1])
+      args.push(p[1])
     })
   return args
 }
