@@ -21,19 +21,25 @@ require("@dot-event/store")(dot)
 ## Auto-detect arguments
 
 ```js
-dot.arg("myArgs") // detects args from `process.argv` or `window.location`
-dot.get("myArgs") // { _: ["arg"], opt: true }
+const args = dot.arg() // detects args from `process.argv` or `window.location`
+args // { _: ["arg"], opt: true }
 ```
 
 ## Manual arguments
 
 ```js
-dot.arg("myArgs", {
+const args = dot.arg({
   args: ["arg", "-o"],
   alias: { o: ["opt"] },
 })
-dot.get("myArgs") // { _: ["arg"], o: true, opt: true }
+args // { _: ["arg"], o: true, opt: true }
 ```
+
+## Options
+
+| Option | Description                                                     |
+| ------ | --------------------------------------------------------------- |
+| `save` | Save args to [store](https://github.com/dot-event/store#readme) |
 
 ## Credits
 

@@ -15,6 +15,7 @@ test("arg from array", function() {
 
   return dot("arg", "test", {
     args: ["a", "-b", "--c=d"],
+    save: true,
   }).then(function() {
     expect(dot.get("test")).toEqual({
       _: ["a"],
@@ -27,7 +28,7 @@ test("arg from array", function() {
 test("arg from process", function() {
   expect.assertions(1)
 
-  return dot.arg("test").then(function() {
+  return dot.arg("test", { save: true }).then(function() {
     expect(dot.get("test")).toEqual({ _: [] })
   })
 })
@@ -37,6 +38,7 @@ test("arg from url", function() {
 
   var promise = dot("arg", "test", {
     args: "http://host?x=1&y=1",
+    save: true,
   }).then(function() {
     expect(dot.get("test")).toEqual({ _: [], x: 1, y: 1 })
   })
@@ -52,6 +54,7 @@ test("arg with alias", function() {
   return dot("arg", "test", {
     alias: { hi: "hello" },
     args: ["--hi"],
+    save: true,
   }).then(function() {
     expect(dot.get("test")).toEqual({
       _: [],

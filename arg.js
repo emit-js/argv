@@ -28,7 +28,13 @@ function parseArgs(prop, arg, dot) {
     args = processArgs() || urlArgs()
   }
 
-  return dot.set(prop, getopts(args, { alias: alias }))
+  args = getopts(args, { alias: alias })
+
+  if (arg.save) {
+    return dot.set(prop, args)
+  } else {
+    return args
+  }
 }
 
 function processArgs() {
