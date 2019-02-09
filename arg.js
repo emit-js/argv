@@ -30,7 +30,7 @@ function parseArgs(prop, arg, dot) {
 
   args = getopts(args, { alias: alias })
 
-  if (arg.save) {
+  if (arg && arg.save) {
     return dot.set(prop, args)
   } else {
     return args
