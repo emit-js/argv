@@ -1,6 +1,6 @@
 # @dot-event/arg
 
-[dot-event](https://github.com/dot-event/dot-event#readme) CLI and URL arguments
+[dot-event](https://github.com/dot-event/dot-event#readme) cli and url arguments
 
 ![orbs](orbs.gif)
 

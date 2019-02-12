@@ -1,9 +1,11 @@
 {
   "name": "@dot-event/arg",
   "version": "0.0.4",
-  "description": "dot-event argument handler",
+  "description": "dot-event cli and url arguments",
   "keywords": [
     "event",
+    "cli",
+    "url",
     "arguments"
   ],
   "author": "dot-event <oss@dot-event.io>",
