@@ -1,6 +1,6 @@
 {
   "name": "@dot-event/arg",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "dot-event cli and url arguments",
   "keywords": [
     "event",
