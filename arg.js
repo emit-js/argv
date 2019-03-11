@@ -3,13 +3,10 @@
 
 var getopts = require("getopts")
 
-module.exports = function arg(dot, opts) {
-  if (dot.state.arg) {
+module.exports = function arg(dot) {
+  if (dot.arg) {
     return
   }
-
-  opts = opts || {}
-  dot.state.arg = opts
 
   dot.any("arg", parseArgs)
 }
