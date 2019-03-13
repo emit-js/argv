@@ -1,6 +1,6 @@
 {
   "name": "@dot-event/arg",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "dot-event cli and url arguments",
   "keywords": [
     "event",
@@ -26,7 +26,7 @@
     "getopts": "2.2.3"
   },
   "devDependencies": {
-    "@dot-event/store": "7.0.15",
+    "@dot-event/store": "7.0.16",
     "dot-event": "3.1.3",
     "eslint": "5.15.1",
     "eslint-config-prettier": "4.1.0",
