@@ -14,21 +14,21 @@ npm install dot-event @dot-event/argv
 
 ```js
 const dot = require("dot-event")()
-require("@dot-event/arg")(dot)
+require("@dot-event/argv")(dot)
 require("@dot-event/store")(dot)
 ```
 
 ## Auto-detect arguments
 
 ```js
-const args = dot.arg() // detects args from `process.argv`
+const args = dot.argv() // detects args from `process.argv`
 expect(args).toEqual({ _: ["arg"], opt: true })
 ```
 
 ## Manual arguments
 
 ```js
-const args = dot.arg({
+const args = dot.argv({
   args: ["arg", "-o"],
   alias: { o: ["opt"] },
 })
