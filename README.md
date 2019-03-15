@@ -1,13 +1,13 @@
-# @dot-event/arg
+# @dot-event/argv
 
-[dot-event](https://github.com/dot-event/dot-event#readme) cli and url arguments
+[dot-event](https://github.com/dot-event/dot-event#readme) `process.argv` parser
 
-![orbs](orbs.gif)
+![argv](argv.gif)
 
 ## Install
 
 ```bash
-npm install dot-event @dot-event/arg @dot-event/store
+npm install dot-event @dot-event/argv
 ```
 
 ## Setup
@@ -21,8 +21,8 @@ require("@dot-event/store")(dot)
 ## Auto-detect arguments
 
 ```js
-const args = dot.arg() // detects args from `process.argv` or `window.location`
-args // { _: ["arg"], opt: true }
+const args = dot.arg() // detects args from `process.argv`
+expect(args).toEqual({ _: ["arg"], opt: true })
 ```
 
 ## Manual arguments
@@ -32,14 +32,8 @@ const args = dot.arg({
   args: ["arg", "-o"],
   alias: { o: ["opt"] },
 })
-args // { _: ["arg"], o: true, opt: true }
+expect(args).toEqual({ _: ["arg"], o: true, opt: true })
 ```
-
-## Options
-
-| Option | Description                                                     |
-| ------ | --------------------------------------------------------------- |
-| `save` | Save args to [store](https://github.com/dot-event/store#readme) |
 
 ## Credits
 

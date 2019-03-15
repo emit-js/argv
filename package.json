@@ -1,21 +1,20 @@
 {
-  "name": "@dot-event/arg",
-  "version": "0.0.8",
-  "description": "dot-event cli and url arguments",
+  "name": "@dot-event/argv",
+  "version": "3.0.0",
+  "description": "dot-event process.argv parser",
   "keywords": [
-    "event",
-    "cli",
-    "url",
-    "arguments"
+    "dot-event",
+    "process.argv",
+    "parser"
   ],
   "author": "dot-event <oss@dot-event.io>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/dot-event/arg.git"
+    "url": "git+ssh://git@github.com/dot-event/argv.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/dot-event/arg#readme",
-  "main": "arg.js",
+  "homepage": "https://github.com/dot-event/argv#readme",
+  "main": "argv.js",
   "scripts": {
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore --ext=js .",
@@ -35,13 +34,6 @@
     "jest": "24.3.1",
     "lint-staged": "8.1.5",
     "prettier": "1.16.4"
-  },
-  "operations": {
-    "starter": {},
-    "git": {},
-    "link": {},
-    "spawn": {},
-    "version": {}
   },
   "eslintConfig": {
     "env": {
