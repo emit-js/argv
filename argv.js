@@ -4,7 +4,7 @@
 var getopts = require("getopts")
 
 module.exports = function(dot) {
-  if (dot.arg) {
+  if (dot.argv) {
     return
   }
 
