@@ -3,15 +3,15 @@
 
 var getopts = require("getopts")
 
-module.exports = function(dot) {
-  if (dot.argv) {
+module.exports = function(emit) {
+  if (emit.argv) {
     return
   }
 
-  dot.any("argv", argv)
+  emit.any("argv", argv)
 }
 
-function argv(prop, arg, dot) {
+function argv(arg, prop, emit) {
   var alias, args
 
   if (arg) {
@@ -26,7 +26,7 @@ function argv(prop, arg, dot) {
   args = getopts(args, { alias: alias })
 
   if (arg && arg.save) {
-    return dot("set", prop, args)
+    return emit("set", prop, args)
   } else {
     return args
   }

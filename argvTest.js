@@ -1,21 +1,21 @@
 /* eslint-env jest */
 
-var dot
+var emit
 
 beforeEach(function() {
-  dot = require("dot-event")()
-  require("@dot-event/store")(dot)
-  require("./argv")(dot)
+  emit = require("@emit-js/emit")()
+  require("@emit-js/store")(emit)
+  require("./argv")(emit)
 })
 
 test("args from array", function() {
   expect.assertions(1)
 
-  return dot("argv", "test", {
+  return emit("argv", "test", {
     args: ["a", "-b", "--c=d"],
     save: true,
   }).then(function() {
-    expect(dot.get("test")).toEqual({
+    expect(emit.get("test")).toEqual({
       _: ["a"],
       b: true,
       c: "d",
@@ -26,20 +26,20 @@ test("args from array", function() {
 test("args from process", function() {
   expect.assertions(1)
 
-  return dot.argv("test", { save: true }).then(function() {
-    expect(dot.get("test")).toEqual({ _: [] })
+  return emit.argv("test", { save: true }).then(function() {
+    expect(emit.get("test")).toEqual({ _: [] })
   })
 })
 
 test("args with alias", function() {
   expect.assertions(1)
 
-  return dot("argv", "test", {
+  return emit("argv", "test", {
     alias: { hi: "hello" },
     args: ["--hi"],
     save: true,
   }).then(function() {
-    expect(dot.get("test")).toEqual({
+    expect(emit.get("test")).toEqual({
       _: [],
       hello: true,
       hi: true,

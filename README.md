@@ -1,29 +1,29 @@
-# @dot-event/argv
+# @emit-js/argv
 
-[dot-event](https://github.com/dot-event/dot-event#readme) `process.argv` parser
+[emit](https://github.com/emit-js/emit#readme) `process.argv` parser
 
 ![argv](argv.gif)
 
 ## Install
 
 ```bash
-npm install dot-event @dot-event/argv
+npm install @emit-js/emit @emit-js/argv
 ```
 
 ## Usage
 
 ```js
-var dot = require("dot-event")()
-require("@dot-event/argv")(dot)
+var emit = require("@emit-js/emit")()
+require("@emit-js/argv")(emit)
 
-var args = dot.argv()
+var args = emit.argv()
 expect(args).toEqual({ _: ["arg"], opt: true })
 ```
 
 ## Options
 
 ```js
-var args = dot.argv({
+var args = emit.argv({
   args: ["arg", "-o"],
   alias: { o: ["opt"] },
 })

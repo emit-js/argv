@@ -1,19 +1,19 @@
 {
-  "name": "@dot-event/argv",
+  "name": "@emit-js/argv",
   "version": "3.0.2",
-  "description": "dot-event process.argv parser",
+  "description": "emit process.argv parser",
   "keywords": [
-    "dot-event",
+    "@emit-js/emit",
     "process.argv",
     "parser"
   ],
-  "author": "dot-event <oss@dot-event.io>",
+  "author": "emit <oss@emit-js.com>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/dot-event/argv.git"
+    "url": "git+ssh://git@github.com/emit-js/argv.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/dot-event/argv#readme",
+  "homepage": "https://github.com/emit-js/argv#readme",
   "main": "argv.js",
   "scripts": {
     "fix": "npm run lint -- --fix",
@@ -22,16 +22,16 @@
     "test": "jest"
   },
   "dependencies": {
-    "getopts": "2.2.3"
+    "getopts": "2.2.4"
   },
   "devDependencies": {
-    "@dot-event/store": "7.0.18",
-    "dot-event": "3.2.2",
+    "@emit-js/store": "7.0.19",
+    "@emit-js/emit": "3.2.8",
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.1.0",
     "eslint-plugin-prettier": "3.0.1",
     "husky": "1.3.1",
-    "jest": "24.5.0",
+    "jest": "24.7.1",
     "lint-staged": "8.1.5",
     "prettier": "1.16.4"
   },
